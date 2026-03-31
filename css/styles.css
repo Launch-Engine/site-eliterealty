@@ -371,8 +371,8 @@ h4 { font-size: 1.2rem; }
 }
 
 .logo img.logo-dark {
-    filter: brightness(0) saturate(100%) invert(59%) sepia(52%) saturate(468%) hue-rotate(147deg) brightness(93%) contrast(89%);
-    /* Recolors white logo to teal for light backgrounds */
+    filter: brightness(0);
+    /* Recolors white logo to black for light backgrounds */
 }
 
 .logo-text {
@@ -459,7 +459,7 @@ h4 { font-size: 1.2rem; }
     min-height: 90vh;
     display: flex;
     align-items: center;
-    background: url('../images/hero-skyline.jpg') center/cover no-repeat;
+    background: url('../images/hero-skyline.jpg') left center/cover no-repeat;
     overflow: hidden;
     padding-top: 100px;
 }
@@ -468,7 +468,7 @@ h4 { font-size: 1.2rem; }
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(12,46,58,0.78) 0%, rgba(26,68,80,0.65) 50%, rgba(22,61,74,0.7) 100%);
+    background: linear-gradient(135deg, rgba(12,46,58,0.7) 0%, rgba(26,68,80,0.5) 50%, rgba(22,61,74,0.55) 100%);
     pointer-events: none;
 }
 
