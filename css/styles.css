@@ -117,7 +117,7 @@ h4 { font-size: 1.2rem; }
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--color-gold);
+    color: var(--color-accent);
     margin-bottom: 0.75rem;
 }
 
@@ -468,7 +468,7 @@ h4 { font-size: 1.2rem; }
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(12,46,58,0.7) 0%, rgba(26,68,80,0.5) 50%, rgba(22,61,74,0.55) 100%);
+    background: linear-gradient(135deg, rgba(20,20,20,0.65) 0%, rgba(30,30,30,0.45) 50%, rgba(25,25,25,0.5) 100%);
     pointer-events: none;
 }
 
@@ -485,9 +485,9 @@ h4 { font-size: 1.2rem; }
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(212,168,83,0.15);
-    border: 1px solid rgba(212,168,83,0.3);
-    color: var(--color-gold);
+    background: rgba(56,178,200,0.15);
+    border: 1px solid rgba(56,178,200,0.3);
+    color: var(--color-accent);
     padding: 8px 16px;
     border-radius: var(--radius-full);
     font-size: 0.8rem;
@@ -553,7 +553,7 @@ h4 { font-size: 1.2rem; }
 /* --- Credential Bar --- */
 .credential-bar {
     background: var(--color-dark);
-    border-top: 1px solid rgba(212,168,83,0.2);
+    border-top: 1px solid rgba(56,178,200,0.2);
     padding: 24px 0;
 }
 
@@ -577,7 +577,7 @@ h4 { font-size: 1.2rem; }
 .credential-item svg {
     width: 20px;
     height: 20px;
-    color: var(--color-gold);
+    color: var(--color-accent);
     flex-shrink: 0;
 }
 
@@ -1252,8 +1252,8 @@ h4 { font-size: 1.2rem; }
 /* --- Team Grid --- */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
     margin-top: 48px;
 }
 
