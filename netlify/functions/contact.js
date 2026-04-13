@@ -1,7 +1,7 @@
 // Netlify serverless function: creates a lead on the Monday.com "Elite Leads" board
 // Requires MONDAY_API_KEY environment variable set in Netlify dashboard
 
-const BOARD_ID = "18408477864";
+const BOARD_ID = "18408486109";
 
 const INTEREST_MAP = {
   buying: "Buying a Home",
@@ -44,16 +44,16 @@ exports.handler = async function (event) {
   const interestLabel = INTEREST_MAP[interest] || "";
 
   const columnValues = {
-    email_mm2cyev9: { email: email, text: email },
-    long_text_mm2c54dm: { text: message },
-    color_mm2c2jng: { label: "New" },
+    email_mm2c6n4m: { email: email, text: email },
+    long_text_mm2ck2jk: { text: message },
+    color_mm2cegm: { label: "New" },
   };
 
   if (phone) {
-    columnValues.phone_mm2cy1st = { phone: phone, countryShortName: "US" };
+    columnValues.phone_mm2c3yqb = { phone: phone, countryShortName: "US" };
   }
   if (interestLabel) {
-    columnValues.color_mm2cwqtn = { label: interestLabel };
+    columnValues.color_mm2c79y = { label: interestLabel };
   }
 
   const mutation = `mutation ($boardId: ID!, $itemName: String!, $columnValues: JSON!) {
