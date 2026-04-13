@@ -1,0 +1,97 @@
+// Netlify serverless function: creates a lead on the Monday.com "Elite Leads" board
+// Requires MONDAY_API_KEY environment variable set in Netlify dashboard
+
+const BOARD_ID = "18408477864";
+
+const INTEREST_MAP = {
+  buying: "Buying a Home",
+  selling: "Selling a Property",
+  investing: "Investment Properties",
+  "market-analysis": "Free Market Analysis",
+  "property-management": "Property Management",
+  other: "Other",
+};
+
+exports.handler = async function (event) {
+  if (event.httpMethod !== "POST") {
+    return { statusCode: 405, body: JSON.stringify({ error: "Method not allowed" }) };
+  }
+
+  const apiKey = process.env.MONDAY_API_KEY;
+  if (!apiKey) {
+    return { statusCode: 500, body: JSON.stringify({ error: "Monday API key not configured" }) };
+  }
+
+  let body;
+  try {
+    body = JSON.parse(event.body);
+  } catch {
+    return { statusCode: 400, body: JSON.stringify({ error: "Invalid JSON" }) };
+  }
+
+  const firstName = (body["first-name"] || "").trim();
+  const lastName = (body["last-name"] || "").trim();
+  const email = (body.email || "").trim();
+  const phone = (body.phone || "").trim();
+  const interest = body.interest || "";
+  const message = (body.message || "").trim();
+
+  if (!firstName || !lastName || !email) {
+    return { statusCode: 400, body: JSON.stringify({ error: "First name, last name, and email are required" }) };
+  }
+
+  const itemName = firstName + " " + lastName;
+  const interestLabel = INTEREST_MAP[interest] || "";
+
+  const columnValues = {
+    email_mm2cyev9: { email: email, text: email },
+    long_text_mm2c54dm: { text: message },
+    color_mm2c2jng: { label: "New" },
+  };
+
+  if (phone) {
+    columnValues.phone_mm2cy1st = { phone: phone, countryShortName: "US" };
+  }
+  if (interestLabel) {
+    columnValues.color_mm2cwqtn = { label: interestLabel };
+  }
+
+  const mutation = `mutation ($boardId: ID!, $itemName: String!, $columnValues: JSON!) {
+    create_item(board_id: $boardId, item_name: $itemName, column_values: $columnValues) {
+      id
+    }
+  }`;
+
+  try {
+    const res = await fetch("https://api.monday.com/v2", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: apiKey,
+      },
+      body: JSON.stringify({
+        query: mutation,
+        variables: {
+          boardId: BOARD_ID,
+          itemName: itemName,
+          columnValues: JSON.stringify(columnValues),
+        },
+      }),
+    });
+
+    const result = await res.json();
+
+    if (result.errors && result.errors.length > 0) {
+      console.error("Monday API errors:", JSON.stringify(result.errors));
+      return { statusCode: 502, body: JSON.stringify({ error: "Failed to create lead" }) };
+    }
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ success: true, itemId: result.data.create_item.id }),
+    };
+  } catch (err) {
+    console.error("Monday API request failed:", err);
+    return { statusCode: 502, body: JSON.stringify({ error: "Failed to create lead" }) };
+  }
+};

@@ -121,12 +121,19 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.textContent = 'Sending...';
             btn.disabled = true;
 
-            // Collect form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
+            var formData = new FormData(this);
+            var data = Object.fromEntries(formData);
 
-            // For now, show success (Netlify Forms will handle in production)
-            setTimeout(function() {
+            fetch('/.netlify/functions/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(function(res) {
+                if (!res.ok) throw new Error('Request failed');
+                return res.json();
+            })
+            .then(function() {
                 btn.textContent = 'Sent!';
                 btn.style.background = 'linear-gradient(135deg, #16A34A, #15803d)';
                 contactForm.reset();
@@ -135,7 +142,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     btn.style.background = '';
                     btn.disabled = false;
                 }, 3000);
-            }, 800);
+            })
+            .catch(function() {
+                btn.textContent = 'Error — Try Again';
+                btn.style.background = 'linear-gradient(135deg, #DC2626, #B91C1C)';
+                setTimeout(function() {
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 3000);
+            });
         });
     }
 });
