@@ -69,10 +69,42 @@
             </div>
             <h1>Pursuing <span>Dreams</span> Together</h1>
             <p class="hero-text">Whether you're buying your first home, selling a property, or growing your investment portfolio, Elite Realty Group delivers expert guidance and results across Northeast Florida.</p>
-            <div class="hero-buttons">
-                <a href="buyers.html" class="btn btn-gold">Buy a Home</a>
-                <a href="sellers.html" class="btn btn-outline">Sell Your Property</a>
-            </div>
+            <form id="property-search-form" class="hero-search" aria-label="Property search">
+                <div class="hero-search-bar">
+                    <input type="text" id="search-location" placeholder="Search by zip code or neighborhood" required>
+                    <button type="submit" class="btn btn-primary">Search Homes</button>
+                </div>
+                <div class="hero-search-filters">
+                    <select id="search-beds" aria-label="Bedrooms">
+                        <option value="">Beds: Any</option>
+                        <option value="1">1+ Beds</option>
+                        <option value="2">2+ Beds</option>
+                        <option value="3">3+ Beds</option>
+                        <option value="4">4+ Beds</option>
+                    </select>
+                    <select id="search-price-min" aria-label="Min Price">
+                        <option value="">No Min</option>
+                        <option value="150000">$150k</option>
+                        <option value="200000">$200k</option>
+                        <option value="250000">$250k</option>
+                        <option value="300000">$300k</option>
+                        <option value="400000">$400k</option>
+                        <option value="500000">$500k</option>
+                        <option value="750000">$750k</option>
+                    </select>
+                    <select id="search-price-max" aria-label="Max Price">
+                        <option value="">No Max</option>
+                        <option value="200000">$200k</option>
+                        <option value="250000">$250k</option>
+                        <option value="300000">$300k</option>
+                        <option value="400000">$400k</option>
+                        <option value="500000">$500k</option>
+                        <option value="750000">$750k</option>
+                    </select>
+                    <span class="hero-search-divider">|</span>
+                    <a href="sellers.html" class="hero-search-link">Sell Your Property &rarr;</a>
+                </div>
+            </form>
             <div class="hero-stats">
                 <div class="hero-stat">
                     <div class="hero-stat-number" data-count="30" data-suffix="+">0+</div>
@@ -112,62 +144,6 @@
         </div>
     </div>
 </div>
-
-<!-- Property Search -->
-<section class="property-search" id="search">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="property-search-title">Search Available Homes</h2>
-            <p class="property-search-subtitle">Find your next home in the Jacksonville area</p>
-        </div>
-        <form id="property-search-form" class="property-search-form" aria-label="Property search">
-            <div class="search-fields">
-                <div class="search-field">
-                    <label for="search-location">Location</label>
-                    <input type="text" id="search-location" placeholder="Zip code or neighborhood" required>
-                </div>
-                <div class="search-field">
-                    <label for="search-beds">Bedrooms</label>
-                    <select id="search-beds">
-                        <option value="">Any</option>
-                        <option value="1">1+</option>
-                        <option value="2">2+</option>
-                        <option value="3">3+</option>
-                        <option value="4">4+</option>
-                    </select>
-                </div>
-                <div class="search-field">
-                    <label for="search-price-min">Min Price</label>
-                    <select id="search-price-min">
-                        <option value="">No Min</option>
-                        <option value="150000">$150k</option>
-                        <option value="200000">$200k</option>
-                        <option value="250000">$250k</option>
-                        <option value="300000">$300k</option>
-                        <option value="400000">$400k</option>
-                        <option value="500000">$500k</option>
-                        <option value="750000">$750k</option>
-                    </select>
-                </div>
-                <div class="search-field">
-                    <label for="search-price-max">Max Price</label>
-                    <select id="search-price-max">
-                        <option value="">No Max</option>
-                        <option value="200000">$200k</option>
-                        <option value="250000">$250k</option>
-                        <option value="300000">$300k</option>
-                        <option value="400000">$400k</option>
-                        <option value="500000">$500k</option>
-                        <option value="750000">$750k</option>
-                    </select>
-                </div>
-                <div class="search-field search-field-btn">
-                    <button type="submit" class="btn btn-primary">Search Homes</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</section>
 
 <!-- Services Overview -->
 <section class="section" id="services">
