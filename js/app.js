@@ -158,4 +158,41 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // --- Property Search ---
+    var searchForm = document.getElementById('property-search-form');
+    if (searchForm) {
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var location = document.getElementById('search-location').value.trim();
+            if (!location) return;
+
+            var beds = document.getElementById('search-beds').value;
+            var minPrice = document.getElementById('search-price-min').value;
+            var maxPrice = document.getElementById('search-price-max').value;
+
+            var bedsPart = beds ? beds + '-_beds/' : '';
+
+            var pricePart = '';
+            if (minPrice && maxPrice) {
+                pricePart = minPrice + '-' + maxPrice + '_price/';
+            } else if (minPrice) {
+                pricePart = minPrice + '-_price/';
+            } else if (maxPrice) {
+                pricePart = '0-' + maxPrice + '_price/';
+            }
+
+            var locationPart;
+            if (/^\d{5}$/.test(location)) {
+                locationPart = location + '_rb/';
+            } else {
+                var slug = location.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+                locationPart = slug + '-jacksonville-fl_rb/';
+            }
+
+            var url = 'https://www.zillow.com/homes/for_sale/' + bedsPart + pricePart + locationPart;
+            window.open(url, '_blank', 'noopener');
+        });
+    }
 });
