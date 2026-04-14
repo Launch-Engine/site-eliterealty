@@ -16,9 +16,9 @@
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KVWMMFK');</script>
 </head>
 <body>
-
+<a href="#main-content" class="skip-link">Skip to main content</a>
 <!-- Header -->
-<header class="header">
+<header class="header" role="banner">
     <div class="header-top">
         <div class="container">
             <div class="header-top-left">
@@ -26,14 +26,14 @@
             </div>
             <div class="header-top-right">
                 <a href="mailto:office@eliterealtygroup.com">office@eliterealtygroup.com</a>
-                <a href="https://suprapm.com" target="_blank">Property Management &rarr;</a>
+                <a href="https://suprapm.com" target="_blank" rel="noopener noreferrer">Property Management &rarr;</a>
             </div>
         </div>
     </div>
     <div class="header-main">
         <div class="container">
             <a href="index.html" class="logo"><img src="images/logo.png" alt="Elite Realty Group" class="logo-dark"></a>
-            <nav class="nav">
+            <nav class="nav" role="navigation" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="buyers.html">Buyers</a>
                 <a href="sellers.html">Sellers</a>
@@ -42,17 +42,19 @@
             </nav>
             <div class="header-actions">
                 <a href="tel:9043743235" class="header-phone">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
                     (904) 374-3235
                 </a>
                 <a href="contact.html" class="btn btn-gold btn-sm">Get Started</a>
             </div>
-            <button class="nav-toggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </div>
 </header>
+
+<main id="main-content">
 
 <!-- Page Hero -->
 <section class="page-hero">
@@ -71,24 +73,24 @@
         </div>
         <div class="faq-list reveal" style="margin-top: 24px; margin-bottom: 48px;">
             <div class="faq-item">
-                <button class="faq-question">How do I get started buying a home?<span class="faq-icon">+</span></button>
-                <div class="faq-answer"><p>The best first step is a free consultation with one of our agents. We'll discuss your goals, budget, timeline, and preferred neighborhoods. We'll also connect you with trusted mortgage lenders to get pre-approved, which strengthens your buying position.</p></div>
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-faq-answer-1">How do I get started buying a home?<span class="faq-icon">+</span></button>
+                <div class="faq-answer" id="faq-faq-answer-1" role="region"><p>The best first step is a free consultation with one of our agents. We'll discuss your goals, budget, timeline, and preferred neighborhoods. We'll also connect you with trusted mortgage lenders to get pre-approved, which strengthens your buying position.</p></div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">Do I need to be pre-approved before looking at homes?<span class="faq-icon">+</span></button>
-                <div class="faq-answer"><p>While you can browse listings at any time, getting pre-approved before touring homes is highly recommended. It tells sellers you're a serious buyer and helps you understand exactly what you can afford. We can recommend trusted local lenders.</p></div>
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-faq-answer-2">Do I need to be pre-approved before looking at homes?<span class="faq-icon">+</span></button>
+                <div class="faq-answer" id="faq-faq-answer-2" role="region"><p>While you can browse listings at any time, getting pre-approved before touring homes is highly recommended. It tells sellers you're a serious buyer and helps you understand exactly what you can afford. We can recommend trusted local lenders.</p></div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">What does it cost to work with a buyer's agent?<span class="faq-icon">+</span></button>
-                <div class="faq-answer"><p>In most cases, the seller pays the buyer's agent commission, so there is no direct cost to you for our representation. We'll explain all the details during your consultation so there are no surprises.</p></div>
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-faq-answer-3">What does it cost to work with a buyer's agent?<span class="faq-icon">+</span></button>
+                <div class="faq-answer" id="faq-faq-answer-3" role="region"><p>In most cases, the seller pays the buyer's agent commission, so there is no direct cost to you for our representation. We'll explain all the details during your consultation so there are no surprises.</p></div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">What areas do you cover?<span class="faq-icon">+</span></button>
-                <div class="faq-answer"><p>We serve the entire Jacksonville metro area, including Riverside, Avondale, San Marco, the Beaches, Mandarin, Southside, Ponte Vedra, St. Augustine, and Palm Coast. We also serve the Palm Beach and Lake Worth areas in South Florida.</p></div>
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-faq-answer-4">What areas do you cover?<span class="faq-icon">+</span></button>
+                <div class="faq-answer" id="faq-faq-answer-4" role="region"><p>We serve the entire Jacksonville metro area, including Riverside, Avondale, San Marco, the Beaches, Mandarin, Southside, Ponte Vedra, St. Augustine, and Palm Coast. We also serve the Palm Beach and Lake Worth areas in South Florida.</p></div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">When buying a new home, what upgrades hold the most value?<span class="faq-icon">+</span></button>
-                <div class="faq-answer"><p>For investment properties, we recommend buying from the smaller to medium size in the tract and spending only a minimal amount on upgrades. For your personal home, select upgrades that enhance your quality of living. One consistent recommendation: always upgrade the carpet and padding.</p></div>
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-faq-answer-5">When buying a new home, what upgrades hold the most value?<span class="faq-icon">+</span></button>
+                <div class="faq-answer" id="faq-faq-answer-5" role="region"><p>For investment properties, we recommend buying from the smaller to medium size in the tract and spending only a minimal amount on upgrades. For your personal home, select upgrades that enhance your quality of living. One consistent recommendation: always upgrade the carpet and padding.</p></div>
             </div>
         </div>
 
@@ -98,24 +100,24 @@
         </div>
         <div class="faq-list reveal" style="margin-top: 24px; margin-bottom: 48px;">
             <div class="faq-item">
-                <button class="faq-question">How do I know what my home is worth?<span class="faq-icon">+</span></button>
-                <div class="faq-answer"><p>We provide a free Comparative Market Analysis (CMA) that evaluates your home against recent sales of similar properties in your area. This data-driven approach ensures your home is priced competitively to attract buyers while maximizing your return.</p></div>
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-faq-answer-6">How do I know what my home is worth?<span class="faq-icon">+</span></button>
+                <div class="faq-answer" id="faq-faq-answer-6" role="region"><p>We provide a free Comparative Market Analysis (CMA) that evaluates your home against recent sales of similar properties in your area. This data-driven approach ensures your home is priced competitively to attract buyers while maximizing your return.</p></div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">How long does it take to sell a home in Jacksonville?<span class="faq-icon">+</span></button>
-                <div class="faq-answer"><p>Market conditions vary, but a well-priced and properly marketed home in the Jacksonville area typically receives offers within the first few weeks. Our marketing strategy combines professional photography, online listings, social media, and our local network to maximize exposure.</p></div>
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-faq-answer-7">How long does it take to sell a home in Jacksonville?<span class="faq-icon">+</span></button>
+                <div class="faq-answer" id="faq-faq-answer-7" role="region"><p>Market conditions vary, but a well-priced and properly marketed home in the Jacksonville area typically receives offers within the first few weeks. Our marketing strategy combines professional photography, online listings, social media, and our local network to maximize exposure.</p></div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">What should I do to prepare my home for sale?<span class="faq-icon">+</span></button>
-                <div class="faq-answer"><p>We provide a detailed preparation checklist during our listing consultation. Key steps include decluttering, deep cleaning, minor repairs, and staging. Our team can recommend trusted local contractors and stagers to help your home show its best.</p></div>
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-faq-answer-8">What should I do to prepare my home for sale?<span class="faq-icon">+</span></button>
+                <div class="faq-answer" id="faq-faq-answer-8" role="region"><p>We provide a detailed preparation checklist during our listing consultation. Key steps include decluttering, deep cleaning, minor repairs, and staging. Our team can recommend trusted local contractors and stagers to help your home show its best.</p></div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">Do you help with investment properties?<span class="faq-icon">+</span></button>
-                <div class="faq-answer"><p>Absolutely. We work with investors on acquisitions, dispositions, and portfolio building. Our sister company, SUPRA Property Management, provides full-service property management for a seamless experience from purchase through ongoing rental management.</p></div>
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-faq-answer-9">Do you help with investment properties?<span class="faq-icon">+</span></button>
+                <div class="faq-answer" id="faq-faq-answer-9" role="region"><p>Absolutely. We work with investors on acquisitions, dispositions, and portfolio building. Our sister company, SUPRA Property Management, provides full-service property management for a seamless experience from purchase through ongoing rental management.</p></div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">What sets Elite Realty Group apart?<span class="faq-icon">+</span></button>
-                <div class="faq-answer"><p>Our 30+ years of combined experience, deep local market knowledge, and commitment to client satisfaction set us apart. As members of NAR, NEFAR, and NARPM, we uphold the highest professional standards. Plus, our in-house property management through SUPRA PM gives investor clients a unique advantage.</p></div>
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-faq-answer-10">What sets Elite Realty Group apart?<span class="faq-icon">+</span></button>
+                <div class="faq-answer" id="faq-faq-answer-10" role="region"><p>Our 30+ years of combined experience, deep local market knowledge, and commitment to client satisfaction set us apart. As members of NAR, NEFAR, and NARPM, we uphold the highest professional standards. Plus, our in-house property management through SUPRA PM gives investor clients a unique advantage.</p></div>
             </div>
         </div>
     </div>
@@ -131,18 +133,20 @@
 </section>
 
 <!-- Footer -->
-<footer class="footer">
+</main>
+
+<footer class="footer" role="contentinfo">
     <div class="container">
         <div class="footer-grid">
             <div class="footer-brand">
                 <a href="index.html"><img src="images/logo.png" alt="Elite Realty Group" style="height: 48px; margin-bottom: 16px;"></a>
                 <p>Jacksonville's trusted real estate team with over 30 years of combined experience. Residential, commercial, and investment properties across Northeast Florida.</p>
                 <div class="footer-social">
-                    <a href="https://www.facebook.com/eliterealtygroupofjax" target="_blank" aria-label="Facebook">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                    <a href="https://www.facebook.com/eliterealtygroupofjax" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
                     </a>
-                    <a href="https://www.youtube.com" target="_blank" aria-label="YouTube">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43zM9.75 15.02V8.48l5.75 3.27-5.75 3.27z"/></svg>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43zM9.75 15.02V8.48l5.75 3.27-5.75 3.27z"/></svg>
                     </a>
                 </div>
             </div>

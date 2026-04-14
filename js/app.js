@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
         navToggle.addEventListener('click', function() {
             nav.classList.toggle('open');
             this.classList.toggle('active');
+            var expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', String(!expanded));
         });
 
         // Close nav when link clicked
@@ -46,12 +48,14 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.faq-item').forEach(function(i) {
                 i.classList.remove('active');
                 i.querySelector('.faq-answer').style.maxHeight = null;
+                i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
             });
 
             // Open clicked (if wasn't active)
             if (!isActive) {
                 item.classList.add('active');
                 answer.style.maxHeight = answer.scrollHeight + 'px';
+                btn.setAttribute('aria-expanded', 'true');
             }
         });
     });

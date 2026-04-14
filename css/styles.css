@@ -87,6 +87,40 @@ img {
     display: block;
 }
 
+/* --- Accessibility: Skip Link --- */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 16px;
+    z-index: 10000;
+    padding: 12px 24px;
+    background: var(--color-accent);
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: top var(--transition-fast);
+}
+.skip-link:focus {
+    top: 16px;
+}
+
+/* --- Accessibility: Focus Indicators --- */
+*:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
 a {
     color: var(--color-accent);
     text-decoration: none;
