@@ -1,0 +1,44 @@
+# 301 redirects from old eliterealtygroup.com URLs → new site structure
+# Preserves SEO equity from indexed pages on the legacy site.
+
+# Blog
+/jacksonville-real-estate-blog                                               /blog/                                                           301
+/jacksonville-real-estate-blog/how-to-prepare-your-house-for-sale            /blog/how-to-prepare-your-house-for-sale                         301
+/jacksonville-real-estate-blog/philip-scarborough-on-the-importance-of-business-focus  /blog/philip-scarborough-on-the-importance-of-business-focus  301
+/jacksonville-real-estate-blog/*                                             /blog/                                                           301
+
+# Legacy core pages
+/jacksonville-real-estate           /                        301
+/real-estate/jacksonville-real-estate   /                    301
+/real-estate/palm-beach-real-estate     /contact             301
+/real-estate/index                  /                        301
+/real-estate/about                  /about                   301
+/real-estate/contact                /contact                 301
+/real-estate/contac                 /contact                 301
+
+# Neighborhood landing pages (keyword-rich — send to home with hash so we can
+# later build proper neighborhood pages and re-point these)
+/real-estate/Atlantic-Beach-real-estate      /#service-areas   301
+/real-estate/Jacksonville-Beach-real-estate  /#service-areas   301
+/real-estate/Neptune-Beach-real-estate       /#service-areas   301
+/real-estate/Ponte-Vedra-Beach-real-estate   /#service-areas   301
+/real-estate/Southside-real-estate           /#service-areas   301
+
+# Property management → SUPRA (external)
+/property-management/*              https://suprapm.com/     301!
+
+# Former standalone pages → merged/new locations
+/faq                                /buyers#faq              301
+/testimonials                       /about#testimonials      301
+/careers                            /about                   301
+/wc3                                /accessibility           301
+/sitemap                            /sitemap.xml             301
+/index                              /                        301
+
+# Strip .html extensions (canonical URLs)
+/index.html                         /                        301
+/about.html                         /about                   301
+/buyers.html                        /buyers                  301
+/sellers.html                       /sellers                 301
+/contact.html                       /contact                 301
+/blog/index.html                    /blog/                   301
